@@ -1,0 +1,35 @@
+<h1 id="name"></h1>
+<h1 id="age"></h1>
+<h1 id="surname"></h1>
+<h1 id="address"></h1>
+<h1 id="hobbies"></h1>
+<h1 id="grid"></h1>
+
+
+
+<script type="text/javascript">
+
+    let obj = {
+        name:"Divyang",
+        age:20,
+        grid:8195,
+        surname:"Rawal",
+        address:{
+            country:"india",
+            city:"surat",
+            state:"gujrat",
+            pincode:395007
+
+        },
+        hobbies:["reading","playing","travelling"],
+
+    }
+
+    document.getElementById(`name`).innerHTML = `Name:- ${obj.name}`;
+    document.getElementById(`age`).innerHTML= `Age :- ${obj.age}`;
+    document.getElementById(`surname`).innerHTML= `Surname :- ${obj.surname}`;
+    document.getElementById(`address`).innerHTML= `Address :- ${obj.address.city}`;
+    document.getElementById(`hobbies`).innerHTML= `Hobbies :- ${obj.hobbies[0]}`;
+    document.getElementById(`grid`).innerHTML= `GRID :- ${obj.grid}`;
+
+</script>

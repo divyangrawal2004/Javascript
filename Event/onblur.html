@@ -1,0 +1,28 @@
+<!-- <div>
+    <label for="">Name</label>
+    <input type="text" id="name">
+
+    <input type="button" value="upper" id="btn" onblur="ans()">
+</div>
+<h2 id="ans"></h2>
+
+<script type="text/javascript">
+
+    const ans = () => {
+
+        let name = document.getElementById(`name`).value;
+       document.getElementById(`ans`).innerHTML = name.toLowerCase();
+
+        // document.getElementById(`ans`).innerHTML = `uppercase :- ${name}`;
+
+    }
+
+</script> -->
+
+name: <input type="text" id="name" onblur="myfun()">
+<script>
+let myfun = () => {
+let name = document.getElementById('name');
+name.value = name.value.toLowerCase();
+}
+</script>

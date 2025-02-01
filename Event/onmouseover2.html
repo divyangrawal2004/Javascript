@@ -1,0 +1,19 @@
+<table class="" align="center">
+    <tr>
+        <td>Name :-</td>
+        <td><input type="password" onmouseover="xyz()"></td>
+    </tr>
+</table>
+<h1 id="name"></h1>
+<!-- <button type="button" onmouseover="xyz()">click</button> -->
+
+
+
+<script type="text/javascript">
+
+    const xyz = () => {
+        const name = document.querySelector('input').value;
+        document.getElementById(`name`).innerHTML = `<h2 style= "text-align:center"> Password :- ${name}</h2>`;
+    }
+
+</script>

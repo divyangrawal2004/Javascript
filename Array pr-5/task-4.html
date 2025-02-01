@@ -1,0 +1,12 @@
+<!-- find duplicate element in array. -->
+
+<script type="text/javascript">
+
+    let arr = [10, 20, 10, 30, 20, 30, 50,50]
+    let ans = arr.filter((val, index) =>{
+       return arr.indexOf(val) != index;
+    })
+    console.log(ans);
+</script>
+
+

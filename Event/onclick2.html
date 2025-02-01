@@ -1,0 +1,47 @@
+<div align="center">
+
+    <div class="box"></div>
+    <button onclick="fun()" id="btn">Show</button>
+    <button onclick="fun1()" id="btn1" style="display: none;">Hide</button>
+
+</div>
+<script type="text/javascript">
+
+    const fun = () => {
+
+        
+        
+        let btn = document.querySelector(`#btn`);
+        btn.style.display = "none";
+
+        let btn1 = document.querySelector(`#btn1`);
+        btn1.style.display = "block";
+
+        let box = document.querySelector(`.box`);
+        box.style.height = "200px"
+        box.style.width = "200px"
+        box.style.background = "black";
+        box.style.display = "block";
+
+
+
+    }
+
+    const fun1 = () => {
+
+
+        let box = document.querySelector(`.box`);
+        box.style.display = "none"
+
+
+        let btn1 = document.querySelector(`#btn1`);
+        btn1.style.display = "none";
+
+        let btn = document.querySelector(`#btn`);
+        btn.style.display = "block";
+
+
+
+    }
+
+</script>

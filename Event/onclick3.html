@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- <form >
+
+        <label for="">Name:-</label>
+        <input type="text" id="name" onclick="fun()"><br>
+        <label for="">last name:-</label>
+        <input type="text" id="lname" onclick="fun1()"><br>
+        <label for="">contact no:-</label>
+        <input type="text" id ="cnt" onclick="fun2()"><br>
+
+        <button  id="sub" onclick="fun3()">Submit</button>
+    </form> -->
+
+    <div >
+        <form>
+
+            <label for="">Name:-</label>
+            <input type="text" id="name"><br>
+            <label for="">last name:-</label>
+            <input type="text" id="lname" ><br>
+            <label for="">contact no:-</label>
+            <input type="number" id="cont" ><br>
+
+
+            <button type="submit" id="btn" onmouseover="fun()">Submit</button>
+        </form>
+        <h1 id="ans"></h1>
+    </div>
+    <script type="text/javascript">
+
+        const fun = () => {
+
+            let name = document.getElementById(`name`).value;
+            let lname = document.getElementById(`lname`).value;
+            let cont = document.getElementById(`cont`).value;
+
+            document.getElementById(`ans`).innerHTML = `<h2> Name:-${name} last name:-${lname} contact no:-${cont}</h2>`;
+            // document.getElementById(`ans`).innerHTML = ` `;
+            // document.getElementById(`ans`).innerHTML = ` `;
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
