@@ -1,9 +1,79 @@
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+    }
+
+    input,
+    button {
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: #007BFF;
+        color: white;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background: white;
+    }
+
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #007BFF;
+        color: white;
+    }
+
+    h1#error {
+        color: red;
+    }
+</style>
+
+
+
 <div align="center">
     <h2> Filter Records</h2>
-    <input type="text" id="city" style="margin-bottom: 12px;"><br>
-    <button onclick="cityfun()" style="margin-right: 12px;">City</button>
-    <input type="button" value="Reset" onclick="reset()"><br><br>
+    <input type="text" id="city" style="margin-bottom: 12px;" placeholder="Select City">
+    <button onclick="cityfun()" style="margin-right: 12px;">City</button><br>
+    <input type="number" id="salary" placeholder="Select start salary" style="margin-bottom: 12px;"> To
+    <input type="number" id="salary1" placeholder="Select end salary" style="margin-bottom: 12px;">
+    <button onclick="salaryfun()" style="margin-right: 12px;">Salary</button><br>
+    <input type="text" id="designation" style="margin-bottom: 12px; " placeholder=" Select Designation">
+    <button onclick="designationfun()" style="margin-right: 12px;">Designation</button><br>
 
+    <input type="text" id="hobby" style="margin-bottom: 12px; " placeholder="Select Hobbies">
+    <button onclick="hobbyfun() " style="margin-right: 12px;">Hobbies</button><br>
+    <input type="text" id="gender" style="margin-bottom: 12px;" placeholder="Select Gender">
+    <button onclick="genderfun()" style="margin-right: 12px;">Gender</button><br>
+    <input type="button" value="Reset" onclick="reset()"><br><br>
 
 </div>
 
@@ -69,7 +139,7 @@
             id: 13, name: "Nikhil", email: "nikhil@gmail.com", gender: "male", hobby: ["volleyball", "movies"], city: "indore", salary: 21000, designation: "junior"
         },
         {
-            id: 14, name: "Ravi", email: "ravi@gmail.com", gender: "male", hobby: ["travelling", "music"], city: "pune", salary: 35000, designation: "senior"
+            id: 14, name: "Ravina", email: "ravi@gmail.com", gender: "female", hobby: ["travelling", "music"], city: "pune", salary: 35000, designation: "senior"
         },
         {
             id: 15, name: "Arvind", email: "arvind@gmail.com", gender: "male", hobby: ["cricket", "painting"], city: "surat", salary: 12000, designation: "junior"
@@ -81,7 +151,7 @@
             id: 17, name: "Deepak", email: "deepak@gmail.com", gender: "male", hobby: ["football", "photography"], city: "ahmedabad", salary: 10000, designation: "senior"
         },
         {
-            id: 18, name: "Vikram", email: "vikram@gmail.com", gender: "male", hobby: ["reading", "movies"], city: "chennai", salary: 55000, designation: "junior"
+            id: 18, name: "jaanu", email: "vikram@gmail.com", gender: "female", hobby: ["reading", "movies"], city: "chennai", salary: 55000, designation: "junior"
         },
         {
             id: 19, name: "Suresh", email: "suresh@gmail.com", gender: "male", hobby: ["cricket", "travelling"], city: "mumbai", salary: 45000, designation: "junior"
@@ -102,9 +172,11 @@
             id: 24, name: "Pawan", email: "pawan@gmail.com", gender: "male", hobby: ["reading", "photography"], city: "delhi", salary: 30000, designation: "junior"
         },
         {
-            id: 25, name: "Kishore", email: "kishore@gmail.com", gender: "male", hobby: ["football", "cooking"], city: "pune", salary: 90000, designation: "junior"
+            id: 25, name: "Kishory", email: "kishory@gmail.com", gender: "female", hobby: ["football", "cooking"], city: "pune", salary: 90000, designation: "junior"
         }
     ];
+
+    // only table show:-
 
     const datafilter = () => {
 
@@ -132,11 +204,59 @@
     }
     datafilter();
 
+
+    // salary count start :-
+    const salaryfun = () => {
+        let salary = document.getElementById(`salary`).value;
+        let salary1 = document.getElementById(`salary1`).value;
+
+
+        let filtersalary = data.filter((val, index) => {
+            return val.salary >= salary && val.salary <= salary1;
+        })
+
+        document.getElementById(`salary`).value = "";
+
+        let error = "";
+        if (filtersalary.length == 0) {
+            error += `
+            <h2>Record not found</h2>
+            `
+            document.getElementById(`error`).innerHTML = error;
+        }
+
+
+        let tbl = "";
+        filtersalary.map((val, index) => {
+            tbl += `
+        
+        <tr>
+
+              <td>${val.id}</td>
+            <td>${val.name}</td>
+            <td>${val.email}</td>
+            <td>${val.gender}</td>
+            <td>${val.hobby}</td>
+            <td>${val.city}</td>
+            <td>${val.salary}</td>
+            <td>${val.designation}</td>
+         </tr>
+        `
+
+        })
+        document.getElementById(`record`).innerHTML = tbl;
+        document.getElementById(`salary`).value = "";
+        document.getElementById(`salary1`).value = "";
+
+    }
+
+    // salary count end
+
+    // city select start :-
     const cityfun = () => {
 
         let city = document.getElementById(`city`).value;
 
-        // let tbl = "";
         let filteredData = data.filter((val, index) => {
             return val.city === city;
         })
@@ -169,7 +289,132 @@
 
     }
     const reset = () => {
-        datafilter();
+        datafilter(); 
+        document.getElementById("error").innerHTML = ""; 
+    };
+    // city select end
+
+    // gender select start
+
+    let genderfun = () => {
+        let gender = document.getElementById(`gender`).value;
+        let filteredData = data.filter((val, index) => {
+            return val.gender === gender;
+
+        })
+        let error = "";
+        if (filteredData.length == 0) {
+            error += `
+            <h2>Record not found</h2>
+            
+            `
+            document.getElementById(`error`).innerHTML = error;
+        }
+
+        let tbl = "";
+        filteredData.map((val, index) => {
+            tbl += `
+                <tr>
+                    <td>${val.id}</td>
+                    <td>${val.name}</td>
+                    <td>${val.email}</td>
+                    <td>${val.gender}</td>
+                    <td>${val.hobby}</td>
+                    <td>${val.city}</td>
+                    <td>${val.salary}</td>
+                    <td>${val.designation}</td>
+                    </tr>           
+            `
+        })
+        document.getElementById(`record`).innerHTML = tbl;
+        document.getElementById(`gender`).value = "";
+
     }
 
+    // gender select end
+
+    // hobbies start
+
+    const hobbyfun = () => {
+
+        let hobby = document.getElementById(`hobby`).value;
+
+
+        let hobbyfilter = data.filter((val, index) => {
+
+            return val.hobby.includes(hobby);
+        })
+
+        let error = "";
+        if (hobbyfilter.length == 0) {
+            error += `
+            <h2>Record not found</h2>
+            `
+            document.getElementById(`error`).innerHTML = error;
+        }
+        document.getElementById(`hobby`).value = "";
+
+        let tbl = "";
+        hobbyfilter.map((val, index) => {
+
+            tbl += `
+            
+            <tr>
+             <td>${val.id}</td>
+            <td>${val.name}</td>
+            <td>${val.email}</td>
+            <td>${val.gender}</td>
+            <td>${val.hobby}</td>
+            <td>${val.city}</td>
+            <td>${val.salary}</td>
+            <td>${val.designation}</td>
+            </tr>   
+            
+            `
+        })
+        document.getElementById(`record`).innerHTML = tbl;
+
+    }
+
+    // hobbies end
+
+    // designation  select start
+
+    const designationfun = () => {
+        let designation = document.getElementById(`designation`).value;
+
+        let designationfilter = data.filter((val, index) => {
+
+            return val.designation === designation;
+        })
+
+
+        let error = "";
+        if (designationfilter.length == 0) {
+            error += `
+            <h2>Record not found</h2>
+            `
+            document.getElementById(`error`).innerHTML = error;
+        }
+        document.getElementById(`designation`).value = "";
+        let tbl = "";
+        designationfilter.map((val, index) => {
+            tbl += `
+
+                <tr>
+                     <td>${val.id}</td>
+            <td>${val.name}</td>
+            <td>${val.email}</td>
+            <td>${val.gender}</td>
+            <td>${val.hobby}</td>
+            <td>${val.city}</td>
+            <td>${val.salary}</td>
+            <td>${val.designation}</td>
+                    </tr>
+                `
+        })
+        document.getElementById(`record`).innerHTML = tbl;
+
+
+    }
 </script>
