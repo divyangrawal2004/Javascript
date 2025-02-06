@@ -1,63 +1,83 @@
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        text-align: center;
-        margin: 0;
-        padding: 20px;
-    }
+ <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color:  hsla(0, 54%, 26%, 0.1);
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
 
-    .container {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        display: inline-block;
-    }
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
 
-    input,
-    button {
-        padding: 10px;
-        margin: 5px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
+/* Styling for buttons */
+button {
+    background: linear-gradient(45deg, #007BFF, #00C6FF);
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
-    button {
-        background-color: #007BFF;
-        color: white;
-        cursor: pointer;
-    }
+button:hover {
+    background: linear-gradient(45deg, #0056b3, #0086b3);
+}
 
-    button:hover {
-        background-color: #0056b3;
-    }
+/* Styling for input fields */
+input {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
-    table {
-        width: 80%;
-        margin: 20px auto;
-        border-collapse: collapse;
-        background: white;
-    }
+/* Table Styling */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+}
 
-    th,
-    td {
-        border: 1px solid #ddd;
-        padding: 10px;
-        text-align: center;
-    }
+/* Styling for table headers */
+th {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+}
 
-    th {
-        background-color: #007BFF;
-        color: white;
-    }
+/* Alternate row colors */
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
 
-    h1#error {
-        color: red;
-    }
-</style>
+tr:nth-child(even) {
+    background-color: #d9edf7;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+h1#error {
+    color: red;
+}
 
 
+
+ </style>
+ 
+ 
 
 <div align="center">
     <h2> Filter Records</h2>

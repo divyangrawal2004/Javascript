@@ -1,0 +1,18 @@
+<h1 id="ans"></h1>
+
+<script type="text/javascript">
+
+    try {
+        var a = 10, b = 0;
+        if (b == 0) {
+            throw "Can not divide by zero.."
+        } else {
+            let ans = a / b;
+            document.getElementById(`ans`).innerHTML = `ans :- ${ans}`
+        }
+
+    } catch (e) {
+        console.error(e)
+    }
+
+</script>

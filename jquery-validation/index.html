@@ -1,4 +1,61 @@
-	
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        text-align: left;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        background: #28a745;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background: #218838;
+    }
+
+    .error {
+        color: red;
+        font-size: 14px;
+        text-align: left;
+    }
+</style>
 <!-- jquery validation -->
 <!DOCTYPE html>
 <html lang="en">
@@ -11,18 +68,18 @@
 
 <body>
     <div align="center">
-        <h2>Jquery Validation</h2>
+        <h1>Jquery Validation</h1>
         <form id="myForm">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" >
             <br><br>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" >
             <br><br>
 
             <label for="password">Password:</label>
-            <input type="text" id="password" name="password" required>
+            <input type="text" id="password" name="password" >
             <br><br>
 
             <button type="button" id="btn">Submit</button>
@@ -30,12 +87,11 @@
     </div>
 
     <!-- First, load jQuery -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>; -->
+   
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>        
 
 
      <!-- Then, load the jQuery Validation plugin  -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script&gt; -->
         <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
 
     <script type="text/javascript">
