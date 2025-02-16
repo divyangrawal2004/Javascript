@@ -1,0 +1,44 @@
+<script type="text/javascript">
+
+    class demo {
+
+        constructor() {
+            this.a = 10;
+            this.b = 5;
+            this.user =            
+            [
+                { id: 1, name: "divyang", phone: 1234567 },
+                { id: 2, name: "smit", phone: 12345671 },
+                { id: 3, name: "subham", phone: 812345678 }
+            ]
+        }
+        sum() {
+
+            console.log(this.a + this.b);
+        }
+
+        sub() {
+            console.log(this.a - this.b);
+        }
+
+        mul() {
+            console.log(this.a * this.b);
+
+        }
+        div() {
+            console.log(this.a / this.b);
+
+        }
+        users(){
+            console.log(this.user);            
+        }
+    }
+
+    let obj = new demo;
+    obj.sum();
+    obj.sub();
+    obj.mul();
+    obj.div();
+    obj.users();
+
+</script>

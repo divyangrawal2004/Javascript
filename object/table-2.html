@@ -1,0 +1,128 @@
+<h2 align="center">Table Creating</h2>
+
+<button onclick="createTable()"
+    style="width: 140px; height: 40px; background-color: aqua; font-size: 18px; font-weight: 600; border: 5; margin: 0 auto;">All
+    Data</button>
+
+<button onclick="pack()"
+    style="width: 140px; height: 40px; background-color: aqua; font-size: 18px; font-weight: 600; border: 5; margin: 0 auto;">Active
+    Data</button>
+<table border="1" align="center" cellpadding="10" id="table" style="display: none;">
+    <thead>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Course</th>
+        <th>Status</th>
+        <th>Salary</th>
+    </thead>
+    <tbody id="record">
+
+    </tbody>
+</table>
+
+<script type="text/javascript">
+
+    let detail = [
+        {
+            name: "divu",
+            age: "20",
+            gender: "male",
+            address: "surat",
+            phone: "1234567890",
+            email: "divu@gmail.com",
+            course: ["js", "html", "css"],
+            status: "active",
+            salary: 30000,
+
+        },
+        {
+            name: "subham",
+            age: "19",
+            gender: "male",
+            address: "surat",
+            phone: "09876543",
+            email: "subham@gmail.com",
+            course: ["bootstap", "node", "php"],
+            status: "active",
+            salary: 20000,
+
+        },
+
+        {
+            name: "smit",
+            age: "18",
+            gender: "male",
+            address: "ahmedabad",
+            phone: "564738293",
+            email: "smit@gmail.com",
+            course: ["python", "photo-shop", "media-query"],
+            status: "deactive",
+            salary: 10000,
+
+        },
+    ]
+
+
+    const createTable = () => {
+        let table = "";
+        detail.map((val, index) => {
+
+            table += `
+
+    <tr>
+        <td > ${val.name}</td>
+        <td > ${val.age}</td>
+        <td > ${val.gender}</td>
+        <td > ${val.address}</td>
+        <td > ${val.phone}</td>
+        <td > ${val.email}</td>
+        <td > ${val.course}</td>
+        <td > ${val.status} </td>
+        <td > ${val.salary} </td>
+        
+    </tr>        
+`;
+        })
+        document.getElementById('record').innerHTML = table;
+        document.getElementById('table').style.display = "table";
+
+    }
+
+    const pack = () => {
+
+
+        let table = "";
+        let pack = detail.filter((val, index) => val.status == "active")
+
+        pack.map((val, index) => {
+
+            table += `
+
+    <tr>
+        <td > ${val.name}</td>
+        <td > ${val.age}</td>
+        <td > ${val.gender}</td>
+        <td > ${val.address}</td>
+        <td > ${val.phone}</td>
+        <td > ${val.email}</td>
+        <td > ${val.course}</td>
+        <td > ${val.status} </td>
+        <td > ${val.salary} </td>
+        
+    </tr>        
+`;
+        })
+        document.getElementById('record').innerHTML = table;
+        document.getElementById('table').style.display = "table";
+
+
+
+    }
+
+
+
+</script>

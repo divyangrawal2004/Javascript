@@ -1,0 +1,67 @@
+<h1 id="ans"></h1>
+
+<script type="text/javascript">
+
+    let a = parseInt(prompt(`Enter any number:-`));
+    let b = parseInt(prompt(`Enter any number:-`));
+
+    try {
+        
+        if (b == 0) {
+            throw "Can not divide by zero.."
+        
+        } else {
+            let ans = a / b;
+            document.getElementById(`ans`).innerHTML = `ans :- ${ans}`
+        }
+
+    } catch (e) {
+        console.error(e)
+    }
+
+</script>
+
+<!-- <script type="text/javascript">
+    class A {
+        details() {
+            console.log("This is class A");
+        }
+    }
+    class B extends A {
+        details() {
+            var a = 10, b = 5;
+            console.log(`Ans :- ${a + b}`);
+        }
+    }
+    var a = [new A, new B];
+    a.forEach((val) => {
+        val.details();
+        });
+</script> -->
+
+<!-- <script type="text/javascript">
+    class bank {
+        constructor(name, accountNumber, accountBalance) {
+            this.name = name;
+            this.acno = accountNumber;
+            this.acb = accountBalance;
+        }
+        withdraw(accountBalance) {
+            if (this.acb < accountBalance){
+                console.log("Insufficient balance");
+            }else{
+                this.acb = this.acb - accountBalance;
+                console.log(`Balance after withdrawal: ${this.acb}`);
+                alert(`withdrawal successful`);
+            }
+        }
+        deposite(accountBalance){
+            this.acb = this.acb + accountBalance;
+            console.log(`Balance after deposite: ${this.acb}`);
+            alert(`deposite successful`);            
+        }
+    }
+    let obj = new bank("Rahul", 12345, 1000);
+    obj.withdraw(200);
+    obj.deposite(700);
+</script> -->

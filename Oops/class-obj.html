@@ -1,0 +1,44 @@
+<script type="text/javascript">
+
+    // oops
+    // object  orinted programming system
+
+    // class & object
+
+    class demo {
+        sum(a,b){
+            document.write(`<h2>Sum :- ${a+b}</h2>`);
+        }
+
+        swap(a,b){
+            let temp =a;
+            a=b;
+            b=temp;
+
+            document.write(`<h2>Swap A :- ${a}</h2>`)
+            document.write(`<h2>Swap B :- ${b}</h2>`)
+        }
+    }
+    let obj = new demo;
+    obj.sum(10,5)
+    obj.swap(10,20)
+
+    class car{
+        detail() {
+
+           let color="Black";
+           let model="BMW";
+           let price = 10000000;
+
+           document.write(`<h2> Color :- ${color}</h2>`)
+           document.write(`<h2> Model :- ${model}</h2>`)
+           document.write(`<h2> Price :- ${price}</h2>`)
+
+        }
+    }
+
+    let obj1 = new car;
+    obj1.detail() 
+
+
+</script>

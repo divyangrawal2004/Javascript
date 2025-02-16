@@ -1,0 +1,16 @@
+<!-- Write a JavaScript   program to input angles of a triangle and check whether triangle is valid or not. -->
+
+<script type="text/javascript">
+
+    var angle1 = parseInt(prompt(`Enter first angle of triangle`));
+    var angle2 = parseInt(prompt(`Enter second angle of triangle`));
+    var angle3 = parseInt(prompt(`Enter third angle of triangle`));
+    var sum = angle1 + angle2 + angle3;
+    if (sum === 180) {
+        document.write("<h2>Triangle is valid</h2>");
+    } else {
+        document.write("<h2>Triangle is not valid</h2>");
+    }
+
+
+</script>

@@ -1,0 +1,124 @@
+<h1 align="center">
+    Todo list
+</h1>
+<div>
+    <table align="center">
+        <tr>
+            <td>Add task</td>
+            <td><input type="text" id="task"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button value="Submit" onclick="addtask()">submit</button></td>
+        </tr>
+    </table>
+
+    <table align="center">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+
+        <tbody id="todolist"></tbody>
+
+    </table>
+</div>
+
+<script type="text/javascript">
+
+    let record = [];
+
+    let viewtask = () => {
+        let tbl = "";
+
+        record.forEach = ((val, index) => {
+
+            tbl += `
+            <tr>
+                <td> ${val.id}</td>
+                <td> ${val.name}</td>
+                </tr>       
+        
+        `
+        })
+        document.getElementById(`todolist`).innerHTML = tbl;
+
+    }
+    viewtask();
+
+    let addtask = () => {
+
+        let task = document.getElementById(`task`).value;
+
+        const obj = {
+            id : record.length+1,
+            name:task
+        }
+
+        record.push(obj);
+        document.getElementById(`task`).value = "";
+        viewtask();
+    }
+</script>
+
+<!-- <h1 align="center">
+    Todo list
+</h1>
+<div>
+    <table align="center">
+        <tr>
+            <td>Add task</td>
+            <td><input type="text" id="task"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button value="Submit" onclick="addtask()">Submit</button></td>
+        </tr>
+    </table>
+
+    <table align="center" border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        <tbody id="todolist"></tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+    let record = [];
+
+    let viewtask = () => {
+        let tbl = "";
+
+        record.map((val) => {
+            tbl += `
+            <tr>
+                <td> ${val.id}</td>
+                <td> ${val.name}</td>
+            </tr>`;       
+        });
+
+        document.getElementById("todolist").innerHTML = tbl;
+    };
+
+    let addtask = () => {
+        let task = document.getElementById("task").value;
+
+        // if (task === "") {
+        //     alert("Task cannot be empty!");
+        //     return;
+        // }
+
+        const obj = {
+            id: record.length + 1,
+            name: task
+        };
+
+        record.push(obj);
+        document.getElementById("task").value = ""; // Clear input field
+        viewtask();
+    };
+
+
+</script> -->

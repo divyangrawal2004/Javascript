@@ -1,0 +1,25 @@
+<!-- .Write a JavaScript program to find which number is greter in 4 numbers using ladder if else. -->
+
+<script>
+   var num1 = parseInt(prompt(`enter any number1:-`))
+   var num2 = parseInt(prompt(`enter any number2:-`))
+   var num3 = parseInt(prompt(`enter any number3:-`))
+   var num4 = parseInt(prompt(`enter any number4:-`))
+
+   if(num1>num2 && num1>num3 && num1>num4){
+    document.write(`<h2>${num1} : Num1 is max...<h2>`)
+
+   }
+   else if(num2>num1 && num2>num3 && num2>num4){
+    document.write(`<h2>${num2} : Num2 is max...<h2>`)
+   }
+   else if(num3>num1 && num3>num2 && num3>num4)
+   {
+    document.write(`<h2>${num3} : Num3 is max...<h2>`)
+
+   }
+   else {
+    document.write(`<h2>${num4} : Num4 is max...</h2>`)
+   }
+
+</script>

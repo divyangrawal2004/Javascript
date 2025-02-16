@@ -1,0 +1,153 @@
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        text-align: left;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        background: #28a745;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background: #218838;
+    }
+
+    .error {
+        color: red;
+        font-size: 14px;
+        text-align: left;
+    }
+</style>
+<!-- jquery validation -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Validation</title>
+</head>
+
+<body>
+    <div align="center">
+        <h1>Jquery Validation</h1>
+        <form id="myForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" >
+            <br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" >
+            <br><br>
+
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password" >
+            <br><br>
+
+            <button type="button" id="btn">Submit</button>
+        </form>
+    </div>
+
+    <!-- First, load jQuery -->
+   
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>        
+
+
+     <!-- Then, load the jQuery Validation plugin  -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Custom validation method for password
+            $.validator.addMethod("passwordPattern", function (value, element) {
+                // Regex for at least one letter, one number, and one special character
+                return this.optional(element) || /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(value);
+            }, "Your password must contain at least one letter, one number, and one special character");
+
+            // Initialize form validation when the page is ready
+            $("#myForm").validate({
+                rules: {
+                    name: {
+                        required: true,
+                        minlength: 3
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    password: {
+                        required: true,
+                        minlength: 6,
+                        passwordPattern: true  // Use the custom password validation method
+                    }
+                },
+                messages: {
+                    name: {
+                        required: "Please enter your name",
+                        minlength: "Your name must be at least 3 characters long"
+                    },
+                    email: {
+                        required: "Please enter your email",
+                        email: "Please enter a valid email address"
+                    },
+                    password: {
+                        required: "Please enter your password",
+                        minlength: "Your password must be at least 6 characters long"
+                    }
+                },
+                submitHandler: function (form) {
+                    alert("Form is valid!");
+                    form.submit();  // Submit the form if it's valid
+                }
+            });
+
+            // Manually trigger form validation on button click
+            $('#btn').click(function () {
+                if ($("#myForm").valid()) {
+                    $("#myForm").submit();  // Submit form if valid
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

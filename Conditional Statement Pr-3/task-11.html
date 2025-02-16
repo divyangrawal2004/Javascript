@@ -1,0 +1,32 @@
+<!-- Write a JavaScript program to create basic calculator using ladder if else. -->
+
+<script type="text/javascript">
+
+    var num1 = parseInt(prompt("Enter first number: "));
+    var num2 = parseInt(prompt("Enter second number: "));
+    var operator = prompt("Enter operator (+, -, *, /): ");
+    if (operator == "+") {
+        document.write(`<h2> sum is :- ${num1 + num2} </h2>`)
+    }
+    else if (operator == "-") {
+        document.write(`<h2> difference is :- ${num1 - num2} </h2>`)
+    }
+    else if (operator == "*") {
+        document.write(`<h2> product is :- ${num1 * num2} </h2>`)
+    }
+    else if (operator == "/") {
+        if (num2 != 0) {
+            document.write(`<h2> quotient is :- ${num1 / num2} </h2>`)
+        }
+        else {
+            document.write(`<h2> Division by zero is not allowed </h2>`)
+        }
+    }
+    else {
+        document.write(`<h2> Invalid operator </h2>`)
+    }
+
+
+
+
+</script>

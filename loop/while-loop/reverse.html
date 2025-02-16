@@ -1,0 +1,15 @@
+<script type="text/javascript">
+
+
+    var no = parseInt(prompt(`enter any number:-`));
+    var rev = 0;
+    var r;
+    while (no != 0) {
+        r = no % 10;
+        rev = rev * 10 + r;
+        no = no / 10;
+        no = Math.floor(no)
+    }
+    document.write(`<h2>Reverse num:- ${rev} </h2>`);
+
+</script>

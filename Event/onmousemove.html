@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="box" style=" display: flex; justify-content: center;">
+
+        <div style="width: 200px; height: 200px; background-color: brown;" id='box1' onmousemove="ans()">
+
+        
+        </div>
+    </div>
+    <h1 id="ans" style="text-align: center;"></h1>
+
+    <script type="text/javascript">
+      let   start = 0;
+        const ans = () => {
+            // let box = document.getElementById(`box1`).value;
+            // let ans = document.getElementById(`ans`).value;
+           
+            document.getElementById(`ans`).innerHTML = `ans :- ${start}`;
+            start++;
+        }
+
+    </script>
+
+
+</body>
+
+</html>

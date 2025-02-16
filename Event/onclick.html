@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div align = "center" >
+    <table border = 1px>
+        <tr >
+            <td>No1:-</td>
+            <td><input type="number" id="No1"></td>
+        </tr>
+        <tr>
+            <td>No2:-  </td>
+            <td><input type="number" id="No2"></td>
+
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input type="button" value = "sum" onclick="add()"></td>
+        </tr>
+    </table>
+    <h1 id = "ans"></h1>
+</div>
+
+ <script type="text/javascript">
+    const add =() => {
+
+        let No1 = document.getElementById(`No1`).value;
+        let No2 = document.getElementById(`No2`).value;
+        let ans = parseInt(No1) + parseInt(No2);
+
+        document.getElementById(`ans`).innerHTML = `ans :- ${ans}`
+
+        // document.getElementById(`No1`).value = "";
+        // document.getElementById(`No2`).value = "";
+    }
+
+ </script>   
+</body>
+</html>
