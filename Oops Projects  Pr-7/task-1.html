@@ -1,0 +1,23 @@
+<!-- Write a JavaScript program to create a class called "Person" with properties for name, age and country. Include a method
+to display the person's details. Create two instances of the 'Person' class and display their details. -->
+
+<script type="text/javascript">
+    class person {
+        constructor(name, age, country) {
+            this.name = name;
+            this.age = age;
+            this.country = country;
+        }
+
+        display() {
+            console.log(`Name :- ${this.name} & Age :- ${this.age} & Country :- ${this.country}`);           
+        }
+    }
+    let obj1 = new person("Divu", 20, "USA")
+    let obj2 = new person("Rohan", 25, "India")
+    console.log(`Person 1 Details :- `);
+    obj1.display();
+    console.log(`Person 2 Details :- `);
+    obj2.display();
+   
+</script>
