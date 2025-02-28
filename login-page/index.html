@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+    }
+
+    .container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    input {
+        width: 90%;
+        padding: 8px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background: #0056b3;
+    }
+</style>
+
+<body>
+   
+    <h1 align="center">Registeration form</h1>
+    <form align="center">
+        <label for="username">Name:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+
+        <button type="button" style="display: block; margin: 0 auto;" onclick="login()">Login</button>
+    </form>
+
+   
+    <h1 align="center">Login Page</h1>
+    <form align="center">
+        <label for="username">Username:</label>
+        <input type="text" id="name" name="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="pass" name="password" required><br>
+
+
+        <button type="button" style="display: block; margin: 0 auto;" onclick="logindata()">Login</button>
+    </form>
+
+
+</body>
+
+<script type="text/javascript">
+
+    const user = [];
+    const login = () => {
+        let username = document.getElementById('username').value;
+        let password = document.getElementById('password').value;
+
+        user.push({
+          username: username,
+          password: password,
+        });
+
+        document.getElementById('username').value = '';
+        document.getElementById('password').value = '';
+
+        localStorage.setItem("user",JSON.stringify(user));
+        //  ye data ko localStorage mai save krega
+
+        console.log(user);
+        alert("User registered successfully!");
+
+    }
+
+    const logindata = () => {
+
+        let name = document.getElementById(`name`).value
+        let pass = document.getElementById(`pass`).value;
+
+        let login = user.find(val => val.username == name && val.password == pass);
+        if(login) {
+            alert('login success')
+        }else{
+            alert('your username or password is incorrect')
+        }
+        document.getElementById('name').value = '';
+        document.getElementById('pass').value = '';
+
+        localStorage.setItem("user",JSON.stringify(user));
+    }
+   
+  
+
+</script>
+
+</html>

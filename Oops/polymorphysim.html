@@ -1,0 +1,30 @@
+<script type="text/javascript">
+
+    class A{
+        sum() {
+            let a = 10,b = 20;
+            document.write(`<h2> sum :- ${a+b}</h2>`)
+        }
+    }
+
+    class B {
+        sum() {
+            let a = 10,b = 20, c= 30;
+            document.write(`<h2> sum :- ${a+b+c}</h2>`)
+        }
+       
+    }
+    class C {
+        sum() {
+            let a = 10,b = 20, c= 30, d = 40;
+            document.write(`<h2> sum :- ${a+b+c+d}</h2>`)
+        }
+    }
+
+    let obj = [new A, new B, new C]
+
+    obj.forEach((val) => {
+        val.sum()
+    })
+
+</script>

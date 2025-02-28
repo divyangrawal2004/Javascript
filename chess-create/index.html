@@ -1,19 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
-    <table id="root"></table>
+    <h1 align = "center" style="font-size: 30px;">Chess Board</h1>
+    <table id="root" align="center"></table>
 
 </body>
+
 </html>
 
 <script type="text/javascript">
-    let root= document.getElementById(`root`);
-    
+    let root = document.getElementById(`root`);
+    for (let i = 1; i <= 8; i++) {
+        let tr = document.createElement(`tr`);
+        for (let j = 1; j <= 8; j++) {
+           if(j%2==0){
+            let td = document.createElement(`td`);
+            td.height = "75px"
+            td.width= "75px"
+            td.style.backgroundColor = "black";
+            tr.appendChild(td);
+           }
+           else{
+            let td = document.createElement(`td`);
+            td.height = "75px"
+            td.width= "75px"
+            td.style.backgroundColor = "#C5A386";
+            tr.appendChild(td);
+           }
+        }
+        root.appendChild(tr)
+    }
+
 
 </script>
+

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            width: 250px;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            width: 60px;
+        }
+
+        #btn {
+            background-color: #28a745;
+            color: white;
+        }
+
+        #btn:hover {
+            background-color: #218838;
+        }
+
+        #btn1 {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        #btn1:hover {
+            background-color: #c82333;
+        }
+
+        #btn1:disabled {
+            background-color: #b5b5b5;
+            cursor: not-allowed;
+        }
+        
+    </style>
+</head>
+<body>
+    
+   <div class="container">
+    <h1 style="font-size: 32px;">Counter App</h1>
+        <h1 id="count"></h1>
+        <button onclick="Increment()" id="btn"> + </button>
+        <button onclick="Decrement()" id="btn1" disabled> - </button>
+   </div>
+
+   <script>
+        let start = document.getElementById(`count`).innerHTML = 0;
+
+        const Increment = () => {
+            if(start >= 0) {
+                document.getElementById('btn1').disabled = false;
+            }
+            start++;
+            document.getElementById(`count`).innerHTML = start;
+        }
+
+        const Decrement = () => {
+            start--;
+            document.getElementById(`count`).innerHTML = start;
+
+            if(start == 0) {
+                document.getElementById('btn1').disabled = true;
+            }
+        }
+   </script>
+</body>
+</html>

@@ -3,8 +3,15 @@
 <script type="text/javascript">
     let arr=[10,20,30,40,50,70]
     let sum = arr.reduce((val,index) => {
-         return val+=index;
+         return val+index;
     })
     console.log(sum);
 
 </script>
+<!-- 
+reduce mai first value mai 10 bad mai index mai 20 = 30
+bad mai value mai 30 store and index mai 30 = 60
+bad mai value mai 60 store and index mai 40 = 100
+bad mai value mai 100 store and index mai 50 = 150
+bad mai value mai 150 store and index mai 70 = 220
+finally 220 print krega -->

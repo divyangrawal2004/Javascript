@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="users"></h1>
+</body>
+
+<script type="text/javascript">
+    
+    
+    // let arr = [
+    //     {
+    //         "id": 1,
+    //         "name": "John",
+    //         "age": 25,
+    //         "country": "India",
+    //         "city":["surat","valsad","ahmedabad","vadodra"]
+
+    //     },
+    //     {
+    //         "id": 2,
+    //         "name": "Jane",
+    //         "age": 30,
+    //         "country": "USA",
+    //         "city":["newyork","losangeles","chicago","miami"]
+    //     },
+    //     {
+    //         "id": 3,
+    //         "name": "Bob",
+    //         "age": 35,
+    //         "country": "UK",
+    //         "city":["london","manchester","birmingham","sheffield"]
+    //     }
+    // ]
+
+    // console.log(arr);
+
+    // localStorage.setItem("users", JSON.stringify(arr));
+
+
+
+    let users = JSON.parse(localStorage.getItem("users"));
+    console.log(users);
+   
+</script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body align="center">
+
+
+  <h1 id="milli">00</h1>
+  <h1 id="sec">00</h1>
+  <h1 id="min">00</h1>
+  <h1 id="hour">00</h1>
+
+  <div align="center">
+    <button value="button" type="button" onclick="startsec()">Start</button>
+     <button onclick="minute()">Stop</button> 
+    <button onclick="hours()">Reset</button>  
+
+   </div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+  let milli  = document.querySelector(`#milli`).innerHTML = 0;
+  let sec = document.getElementById(`milli`).value = 0;
+  let min = document.getElementById(`sec`).value = 0;
+  let hour = document.getElementById(`min`).value = 0;
+  console.log(milli);
+  
+
+
+  const startsec = () => {
+     setInterval(() => {
+      milli++
+      document.getElementById('milli').innerHTML = milli
+      if(milli == 100){
+        milli = 0
+        sec++
+        document.getElementById(`sec`).innerHTML = sec;
+        }   
+        if(sec== 60){
+          sec =0;
+          min++;
+          document.getElementById(`min`).innerHTML = min;
+        }   
+      
+    },10)
+  }
+</script> 
+
+

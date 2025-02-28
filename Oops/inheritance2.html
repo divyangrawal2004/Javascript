@@ -1,0 +1,24 @@
+<script type="text/javascript">
+
+    class car{
+        constructor(brand){
+            this.brand = brand;
+        }
+
+    }
+    class model extends car{
+        constructor(brand,carname){
+            super(brand);
+            this.carname = carname;
+        }
+
+        detail(){
+            console.log(`carname:- ${this.carname} & model:- ${this.brand}`);
+            
+        }
+    }
+
+    let c = new model("toyota","fortuner");
+    c.detail();
+
+</script>
