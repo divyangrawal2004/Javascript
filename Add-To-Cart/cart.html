@@ -82,9 +82,9 @@
                 cart.map((val) => {
                     total = total += val.price * val.qnt
                     tbl += `   
-              <tr>
+              <tr class="d-flex align-items-center">
                     <td>
-                        <div class="d-flex align-items-center">
+                        <div >
                             <img src="${val.image}" alt="Product Image" class="img-fluid me-3" style="max-width: 100px;">
                             <span>${val.name}</span>
                         </div>
